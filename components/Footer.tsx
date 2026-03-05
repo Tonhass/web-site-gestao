@@ -15,7 +15,7 @@ export function Footer() {
             Especialistas em contabilidade consultiva, transformando números em estratégias de crescimento para o seu negócio desde 2022.
           </p>
           <div className="flex gap-4">
-            <a href={COMPANY.socials.instagram}><Instagram size={20} className="hover:text-blue-400 cursor-pointer transition" /></a>
+            <a href={COMPANY.socials.instagram} target='blanck'><Instagram size={20} className="hover:text-blue-400 cursor-pointer transition" /></a>
             {/* <Linkedin size={20} className="hover:text-blue-400 cursor-pointer transition" /> */}
             {/* <Facebook size={20} className="hover:text-blue-400 cursor-pointer transition" /> */}
           </div>

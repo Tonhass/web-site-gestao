@@ -3,6 +3,7 @@ import { Footer } from '@/components/Footer';
 import { CheckCircle2, BarChart3, Users2, ShieldCheck } from 'lucide-react';
 import { WhatsAppButton } from '@/components/WhatsAppButton'; // Importa aqui!
 import { COMPANY } from '@/constants/company';
+import { InstagramPost } from '@/components/InstagramPost';
 
 export default function Home() {
   return (
@@ -40,10 +41,10 @@ export default function Home() {
         </section>
 
         {/* Cards de Serviços com Hover */}
-        <section id="servicos" className="py-24 bg-slate-50">
+        <section id="servicos" className="py-24 bg-green-900 -translate-y-1 shadow-xl shadow-green-100">
           <div className="max-w-7xl mx-auto px-4 text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Especialistas em você</h2>
-            <p className="text-slate-600 max-w-2xl mx-auto">Oferecemos soluções completas para todas as fases da sua jornada empreendedora.</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Especialistas em você</h2>
+            <p className="text-white max-w-2xl mx-auto">Oferecemos soluções completas para todas as fases da sua jornada empreendedora.</p>
           </div>
 
           {/* Cards */}
@@ -55,8 +56,22 @@ export default function Home() {
             </div>
             ))}
           </div>
-
         </section>
+
+        {/* exposição do perfil do insta */}
+        <section id="box-video" className="py-24 bg-black-100">
+          <div className="max-w-7xl mx-auto px-4">
+            <h2 className="text-3xl font-bold text-center mb-12">Siga-nos no Instagram</h2>
+  
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* Exemplo de uso com links reais de posts */}
+              <InstagramPost url="https://www.instagram.com/p/DVggFp-jSSG/?utm_source=ig_web_copy_link" />
+              <InstagramPost url="https://www.instagram.com/reel/DU9NFeqkSU6/?utm_source=ig_web_copy_link" />
+              <InstagramPost url="https://www.instagram.com/reel/DUjYc7bEc2l/?utm_source=ig_web_copy_link" />
+            </div>
+          </div>
+        </section>
+
       </main>
       <Footer />
       <WhatsAppButton />
