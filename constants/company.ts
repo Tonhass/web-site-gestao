@@ -4,6 +4,11 @@ export interface Service {
   description: string;
 }
 
+export interface Stats {
+  label: string;
+  value: string;
+}
+
 export interface CompanyConfig {
   name: string;
   shortName: string;
@@ -20,6 +25,7 @@ export interface CompanyConfig {
     facebook: string;
   };
   services: Service[];
+  stats: Stats[];
 }
 
 export const COMPANY: CompanyConfig = {
@@ -40,7 +46,7 @@ export const COMPANY: CompanyConfig = {
   services: [
     {
       title: "Abertura de Empresa",
-      description: "Tiramos seu CNPJ do papel com rapidez e segurança tributária."
+      description: "Abrimos sua empresa e cuidamos de todo o processo de CNPJ, alvarás e enquadramento tributário."
     },
     {
       title: "Alteração de Empresa",
@@ -62,5 +68,26 @@ export const COMPANY: CompanyConfig = {
       title: "Consultoria Tributária",
       description: "Análise profunda para reduzir seus impostos de forma legal."
     }
+  ],
+  stats: [
+    { 
+      label: 'Anos de Experiência', value: '20+' 
+    },
+    { 
+      label: 'Clientes Atendidos', value: '950+' 
+    },
+    { 
+      label: 'Empresas Abertas', value: '1300+' 
+    },
+    { 
+      label: 'Impostos Recuperados', value: 'R$ 5M' 
+    }
   ]
+
+};
+
+export const getWhatsAppUrl = (message?: string) => {
+  const defaultMessage = "Olá! Gostaria de falar com um especialista.";
+  const text = encodeURIComponent(message || defaultMessage);
+return `https://wa.me/${COMPANY.whatsappNumber}?text=${text}`;
 };

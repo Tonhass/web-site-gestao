@@ -23,9 +23,9 @@ export function Header() {
 
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
           <a href="#" className="hover:text-blue-600 transition">Início</a>
-          <a href="#servicos" className="hover:text-blue-600 transition">Serviços</a>
+          <a href="#servicos" className="hover:text-green-900 transition">Serviços</a>
           <a href="#sobre" className="hover:text-blue-600 transition">Sobre Nós</a>
-          <button className="bg-green-900 text-white px-5 py-2.5 rounded-full flex items-center gap-2 hover:bg-green-600 transition shadow-lg shadow-blue-200">
+          <button className="bg-green-900 text-white px-5 py-2.5 rounded-full flex items-center gap-2 hover:bg-green-700 transition-colors duration-500">
             <Phone size={16} />
             Falar com Consultor
           </button>

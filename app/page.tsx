@@ -1,15 +1,17 @@
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+import { About } from '@/components/About';
 import { CheckCircle2, BarChart3, Users2, ShieldCheck } from 'lucide-react';
 import { WhatsAppButton } from '@/components/WhatsAppButton'; // Importa aqui!
 import { COMPANY } from '@/constants/company';
 import { InstagramPost } from '@/components/InstagramPost';
+import { CTAButton } from '@/components/CTAButton';
 
 export default function Home() {
   return (
     <>
       <Header />
-      <main className="pt-20"> {/* Padding top para o header fixo não cobrir o conteúdo */}
+      <main className="py-0 md:py-20"> {/* Padding top para o header fixo não cobrir o conteúdo */}
         
         {/* Hero Section com Gradiente */}
         <section className="relative overflow-hidden bg-white py-24 lg:py-32">
@@ -18,52 +20,75 @@ export default function Home() {
               <span className="inline-block px-4 py-1.5 mb-6 text-sm font-semibold tracking-wide text-green-900 uppercase bg-green-50 rounded-full">
                 Contabilidade Digital & Humana
               </span>
-              <h1 className="text-5xl lg:text-7xl font-extrabold text-slate-900 leading-tight mb-6">
-                Sua empresa em <span className="text-green-900">boas mãos.</span>
+              <h1 className="text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-6">
+                {/* Sua empresa em <span className="text-green-900">boas mãos.</span> */}
+                A contabilidade que faz sua empresa <span className="text-green-900">crescer</span>
               </h1>
               <p className="text-lg text-slate-600 mb-10 leading-relaxed max-w-lg">
                 Reduza impostos, organize seu financeiro e foque no que você faz de melhor: crescer o seu negócio.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="text-green-900 text-black px-8 py-4 rounded-xl font-bold text-lg hover:text-green-600 transition-all transform hover:-translate-y-1 shadow-xl shadow-green-100">
-                  Chamar no WhatsApp
-                </button>
+                <CTAButton 
+                  className="shadow-xl shadow-green-100 text-white px-8 py-4 rounded-xl font-bold text-lg bg-green-900 hover:transition-all transform hover:-translate-y-1 hover:bg-green-700 duration-500" 
+                  message="Olá! Preciso de uma consultoria rápida."
+                >
+                  Solicitar atendimento
+                </CTAButton>
               </div>
             </div>
             
-            {/* Elemento Decorativo (Simulando uma imagem/dashboard) */}
+            {/*  imagem/dashboard */}
             <div className="relative">
               <div className=" rounded-3xl shadow-2xl rotate-3 flex items-center justify-center">
-                  <img src="/img_predio.jpg" width={1600} />
+                  <img src="/img_predio.jpg" width={1000} />
               </div>
             </div>
           </div>
         </section>
 
         {/* Cards de Serviços com Hover */}
-        <section id="servicos" className="py-24 bg-green-900 -translate-y-1 shadow-xl shadow-green-100">
-          <div className="max-w-7xl mx-auto px-4 text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Especialistas em você</h2>
-            <p className="text-white max-w-2xl mx-auto">Oferecemos soluções completas para todas as fases da sua jornada empreendedora.</p>
+        <section id="servicos" className="py-10 md:py-24 bg-green-50">
+          <div className="max-w-7xl mx-auto px-4 text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">Serviços Contábeis</h2>
+            <p className="text-black max-w-2xl mx-auto">Oferecemos soluções completas para todas as fases da sua jornada empreendedora.</p>
           </div>
 
           {/* Cards */}
-          <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-8">
+          <div className="max-w-7xl mx-auto px-4">
+          <div className="overflow-x-auto snap-x snap-mandatory md:overflow-visible ">
+          <div className="grid 
+    grid-rows-2 
+    grid-flow-col 
+    auto-cols-[85%] 
+    gap-6
+    md:grid-flow-row 
+    md:grid-cols-3 
+    md:grid-rows-none">
             {COMPANY.services.map((service, index) => (
-            <div key={index} className="group bg-white p-10 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+            <div key={index} className="snap-start card group bg-white p-10 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
               <h3 className="text-xl font-bold text-slate-900 mb-3">{service.title}</h3>
               <p className="text-slate-600 text-sm leading-relaxed">{service.description}</p>
+              <CTAButton className="text-slate-600 text-smmt-auto pt-4 flex items-center gap-2 font-semibold text-green-700 group "
+                message={`Olá! Gostaria de saber mais sobre ${service.title}`}
+              >
+                Saiba mais
+                <span className="transition-transform group-hover:translate-x-1">
+                  →
+                </span>
+                </CTAButton>
             </div>
             ))}
+          </div>
+          </div>
           </div>
         </section>
 
         {/* exposição do perfil do insta */}
-        <section id="box-video" className="py-24 bg-black-100">
+        <section id="box-video" className="py-15 bg-black-100">
           <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-3xl font-bold text-center mb-12">Siga-nos no Instagram</h2>
   
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="flex gap-4 overflow-x-auto md:grid md:grid-cols-3">
               {/* Exemplo de uso com links reais de posts */}
               <InstagramPost url="https://www.instagram.com/p/DVggFp-jSSG/?utm_source=ig_web_copy_link" />
               <InstagramPost url="https://www.instagram.com/reel/DU9NFeqkSU6/?utm_source=ig_web_copy_link" />
@@ -73,6 +98,7 @@ export default function Home() {
         </section>
 
       </main>
+      <About />
       <Footer />
       <WhatsAppButton />
     </>

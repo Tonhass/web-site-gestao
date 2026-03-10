@@ -18,7 +18,7 @@ export function InstagramPost({ url }: InstagramPostProps) {
   }, [url]);
 
   return (
-    <div className="flex justify-center w-full overflow-hidden rounded-xl border border-slate-100 shadow-sm bg-white p-4">
+    <div className="self-start flex justify-center overflow-hidden p-4 min-w-[90%] max-h-[550px]">
       <blockquote
         className="instagram-media"
         data-instgrm-captioned

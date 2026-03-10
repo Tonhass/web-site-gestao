@@ -36,15 +36,15 @@ export function Footer() {
         <div className="space-y-4">
           <h4 className="text-white font-bold mb-6">Contato</h4>
           <div className="flex items-start gap-3 text-sm">
-            <MapPin size={20} className="text-blue-500 shrink-0" />
+            <MapPin size={20} className="text-green-900 shrink-0" />
             <span>{COMPANY.address}</span>
           </div>
           <div className="flex items-center gap-3 text-sm">
-            <Phone size={20} className="text-blue-500 shrink-0" />
+            <Phone size={20} className="text-green-900 shrink-0" />
             <span>{COMPANY.phone}</span>
           </div>
           <div className="flex items-center gap-3 text-sm">
-            <Mail size={20} className="text-blue-500 shrink-0" />
+            <Mail size={20} className="text-green-900 shrink-0" />
             <span>{COMPANY.email}</span>
           </div>
         </div>
