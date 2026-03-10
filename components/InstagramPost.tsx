@@ -10,12 +10,13 @@ interface InstagramPostProps {
 export function InstagramPost({ url }: InstagramPostProps) {
   
   // Função para processar o embed toda vez que o componente montar
-  useEffect(() => {
-    // @ts-ignore - O Instagram injeta o objeto 'instgrm' no window
-    if (window.instgrm) {
-      window.instgrm.Embeds.process();
-    }
-  }, [url]);
+useEffect(() => {
+  const ig = (window as any).instgrm;
+
+  if (ig) {
+    ig.Embeds.process();
+  }
+}, [url]);
 
   return (
     <div className="self-start flex justify-center overflow-hidden p-4 min-w-[90%] max-h-[550px]">
